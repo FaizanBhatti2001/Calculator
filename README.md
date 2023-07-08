@@ -1,0 +1,6 @@
+Introducing an impressive ReactJS calculator with a unique twist. This calculator not only evaluates expressions with ease but also offers a captivating dark mode. By simply clicking the clear button twice, users can immerse themselves in a sleek and visually appealing interface. To switch back, just one click on the clear button is all it takes. Experience the perfect blend of innovation and functionality in this user-friendly calculator. Get ready to revolutionize your calculations in style!
+
+With its upcoming features, this calculator is set to redefine the way you compute:
+1) Customizable Screen and Buttons: Soon, you'll have the power to personalize the calculator's screen and buttons to match your unique style and preferences. Customize the colors, themes, and layouts to make it truly yours.
+2) User Authentication: Enjoy enhanced security and personalized features with user authentication. By creating an account, you can safeguard your calculations, access saved data from any device, and unlock exclusive features tailored to your needs.
+3) User-Specific History: Never lose track of your calculations again. With user-specific history, you'll have a comprehensive record of your past computations, making it easy to refer back to them whenever needed. Effortlessly track your progress and stay organized.
