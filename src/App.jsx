@@ -46,7 +46,7 @@ function App() {
   //Variables
   let symbols = operands.concat(operators);
   let count = 0;
-  // let Mode = "darkMode";
+let Evaluate;
 
   //States
   const [state, setState] = useState("");
@@ -56,6 +56,7 @@ function App() {
   //Functions
   const expression = (value) => {
     if (state.length < 10) {
+      
       setLastCh(value);
       if (value != "=" && value != "C") {
         setState(state + value);
@@ -69,7 +70,9 @@ function App() {
       } else if (lastCh == "") {
         setState("NO INPUT");
       } else {
-        setState("" + eval(state));
+        Evaluate = state.replaceAll("x","*");
+        Evaluate= eval(Evaluate);
+        setState(""+Evaluate);
       }
     }
   };
