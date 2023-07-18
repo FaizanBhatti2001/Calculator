@@ -45,8 +45,8 @@ function App() {
   ];
   //Variables
   let symbols = operands.concat(operators);
-  let count = 0;
-let Evaluate;
+  let clickCount = 0;
+  let Evaluate;
 
   //States
   const [state, setState] = useState("");
@@ -56,7 +56,6 @@ let Evaluate;
   //Functions
   const expression = (value) => {
     if (state.length < 10) {
-      
       setLastCh(value);
       if (value != "=" && value != "C") {
         setState(state + value);
@@ -70,29 +69,26 @@ let Evaluate;
       } else if (lastCh == "") {
         setState("NO INPUT");
       } else {
-        Evaluate = state.replaceAll("x","*");
-        Evaluate= eval(Evaluate);
-        setState(""+Evaluate);
+        Evaluate = state.replaceAll("x", "*");
+        Evaluate = eval(Evaluate);
+        setState("" + Evaluate);
       }
     }
   };
+
   const clearScreen = (value) => {
     if (value == "C") {
-      mode();
+      clickCount = clickCount + 1;
+      if (state.length == 0 && clickCount == 2) {
+        mode();
+      }
       setLastCh("");
       setState("");
     }
   };
   const mode = () => {
-    if (state.length == 0) {
-      count = count + 1;
-    }
-    if (count == 2) {
-      setMode(true);
-      count = 0;
-    } else {
-      setMode(false);
-    }
+    setMode(!Mode);
+    clickCount = 0;
   };
   //Main Function
   const dataShare = (value) => {
