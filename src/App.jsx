@@ -65,9 +65,9 @@ function App() {
   const evaluate = (value) => {
     if (value == "=") {
       if (lastCh == "+" || lastCh == "-" || lastCh == "x" || lastCh == "/") {
-        setState("ERROR");
+        setState("");
       } else if (lastCh == "") {
-        setState("NO INPUT");
+        setState("");
       } else {
         Evaluate = state.replaceAll("x", "*");
         Evaluate = eval(Evaluate);
