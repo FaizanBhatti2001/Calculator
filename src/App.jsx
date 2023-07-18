@@ -63,28 +63,23 @@ function App() {
     }
   };
   const evaluate = (value) => {
-    if (value == "=") {
-      if (lastCh == "+" || lastCh == "-" || lastCh == "x" || lastCh == "/") {
-        setState("");
-      } else if (lastCh == "") {
-        setState("");
-      } else {
-        Evaluate = state.replaceAll("x", "*");
-        Evaluate = eval(Evaluate);
-        setState("" + Evaluate);
-      }
+    if (lastCh == "+" || lastCh == "-" || lastCh == "x" || lastCh == "/") {
+      setState("");
+    } else if (state == "") {
+      setState("");
+    } else {
+      Evaluate = state.replaceAll("x", "*");
+      Evaluate = eval(Evaluate);
+      setState("" + Evaluate);
     }
   };
-
   const clearScreen = (value) => {
-    if (value == "C") {
-      clickCount = clickCount + 1;
-      if (state.length == 0 && clickCount == 2) {
-        mode();
-      }
-      setLastCh("");
-      setState("");
+    clickCount = clickCount + 1;
+    if (state.length == 0 && clickCount == 2) {
+      mode();
     }
+    setLastCh("");
+    setState("");
   };
   const mode = () => {
     setMode(!Mode);
@@ -95,9 +90,13 @@ function App() {
     //Screen Expression Generator
     expression(value);
     //Evaluate Screen
-    evaluate(value);
+    if (value == "=") {
+      evaluate(value);
+    }
     // Clear Screen
-    clearScreen(value);
+    if (value == "C") {
+      clearScreen(value);
+    }
   };
 
   return (
