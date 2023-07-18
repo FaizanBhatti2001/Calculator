@@ -12,6 +12,7 @@
   border: 2px solid black;
   border-radius: 50%;
   font-weight: 600;
+  cursor: grab;
 }
 
 .white {
